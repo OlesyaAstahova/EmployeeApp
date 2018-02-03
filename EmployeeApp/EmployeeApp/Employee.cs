@@ -12,16 +12,80 @@ namespace EmployeeApp
         private string empName;
         private int empID;
         private float currPay;
+        //Новое поле и свойство
+        private int empAge;
+        public int Age
+        {
+            get
+            {
+                return empAge;
+            }
+            set
+            {
+                empAge = value;
+            }
+        }
 
-        //Конструкторы
+
+        //Свойства
+        public string Name
+        {
+            get
+            {
+                return empName;
+            }
+            set
+            {
+                if (value.Length > 15)
+                {
+                    Console.WriteLine("Error! Name must be less than 16 characters!");
+                }
+                else
+                {
+                    empName = value;
+                }
+            }
+        }
+
+        //М.б. бы добавить доп. бизнес-правила для установки этих свойств, но нет необходимости
+        public int ID
+        {
+            get
+            {
+                return empID;
+            }
+            set
+            {
+                empID = value;
+            }
+        }
+
+        public float Pay
+        {
+            get
+            {
+                return currPay;
+            }
+            set
+            {
+                currPay = value;
+            }
+        }
+
+
+        //Обновленные конструкторы
         public Employee() { }
-        public Employee (string name, int id, float pay)
+        public Employee(string name, int id, float pay)
+            : this(name, 20, id, pay) { }
+        
+        public Employee (string name, int age, int id, float pay)
         {
             empName = name;
             empID = id;
+            empAge = age;
             currPay = pay;
         }
-
+        
         //Методы
         public string GetName()
         {
@@ -44,11 +108,14 @@ namespace EmployeeApp
         {
             currPay += amount;
         }
+        //Обновленный метод DisplayStats() 
         public void DisplayStats ()
         {
             Console.WriteLine("Name: {0}", empName);
             Console.WriteLine("ID: {0}", empID);
+            Console.WriteLine("Age: {0}", empAge);
             Console.WriteLine("Pay: {0}", currPay);
         }
+     
     }
 }
