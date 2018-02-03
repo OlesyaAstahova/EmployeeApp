@@ -15,7 +15,7 @@ namespace EmployeeApp
             emp.Age++;
             emp.GiveBonus(1000);
             emp.DisplayStats();
-
+            Console.WriteLine(emp.SocialSecurityNumber);
             /*
             //Использовать методы get/set для взаимодействия с именем объекта
             emp.SetName("Marv");

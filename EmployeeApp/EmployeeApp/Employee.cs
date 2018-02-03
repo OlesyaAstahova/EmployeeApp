@@ -11,6 +11,7 @@ namespace EmployeeApp
         //Поля данных
         private string empName;
         private int empID;
+        private string empSSN;
         private float currPay;
         //Новое поле и свойство
         private int empAge;
@@ -76,14 +77,15 @@ namespace EmployeeApp
         //Обновленные конструкторы
         public Employee() { }
         public Employee(string name, int id, float pay)
-            : this(name, 20, id, pay) { }
+            : this(name, 20, id, pay,"Только для записи") { }
         
-        public Employee (string name, int age, int id, float pay)
+        public Employee (string name, int age, int id, float pay, string ssn)
         {
             Name = name;
             ID = id;
             Age = age;
             Pay = pay;
+            empSSN = ssn;
         }
         
         //Методы
@@ -107,6 +109,14 @@ namespace EmployeeApp
         public void GiveBonus (float amount)
         {
             Pay += amount;
+        }
+
+        public string SocialSecurityNumber
+        {
+            get
+            {
+                return empSSN;
+            }
         }
         //Обновленный метод DisplayStats() 
         public void DisplayStats ()
