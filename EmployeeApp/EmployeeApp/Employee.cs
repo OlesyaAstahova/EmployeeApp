@@ -80,10 +80,10 @@ namespace EmployeeApp
         
         public Employee (string name, int age, int id, float pay)
         {
-            empName = name;
-            empID = id;
-            empAge = age;
-            currPay = pay;
+            Name = name;
+            ID = id;
+            Age = age;
+            Pay = pay;
         }
         
         //Методы
@@ -106,15 +106,15 @@ namespace EmployeeApp
         }
         public void GiveBonus (float amount)
         {
-            currPay += amount;
+            Pay += amount;
         }
         //Обновленный метод DisplayStats() 
         public void DisplayStats ()
         {
-            Console.WriteLine("Name: {0}", empName);
-            Console.WriteLine("ID: {0}", empID);
-            Console.WriteLine("Age: {0}", empAge);
-            Console.WriteLine("Pay: {0}", currPay);
+            Console.WriteLine("Name: {0}", Name);
+            Console.WriteLine("ID: {0}", ID);
+            Console.WriteLine("Age: {0}", Age);
+            Console.WriteLine("Pay: {0}", Pay);
         }
      
     }
